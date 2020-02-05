@@ -1,0 +1,97 @@
+<html>
+
+<head>
+	<title>Pasword Generator</title>
+<script type="text/javascript">
+function myfun(brh){
+	
+	//This code is written BY sameer verma
+
+	var x=document.getElementById("name").value.toString().toLowerCase().split("");
+	var y=document.getElementById("num").value.toString().toLowerCase().split("");
+	var z=document.getElementById("lstnam").value.toString().toLowerCase().split("");
+	var lst=z.length-1;
+	var psw=[];
+
+	var b;
+	if(brh.toString()=="cs"){
+
+		b=x.join("")+"."+z.join("")+"_cs19";
+		document.getElementById("res").innerHTML=b;
+	}
+	else if(brh.toString()=="bca"){
+
+		b=x.join("")+"."+z.join("")+"_bca19";
+		document.getElementById("res").innerHTML=b;
+	}
+	else if(brh.toString()=="bba"){
+
+		b=x.join("")+"."+z.join("")+"_bba19";
+		document.getElementById("res").innerHTML=b;
+	}
+	else if(brh.toString()=="ee"){
+
+		b=x.join("")+"."+z.join("")+"_een19";
+		document.getElementById("res").innerHTML=b;
+	}
+psw.push(y[3]);
+psw.push(y[4]);
+psw.push("_B");
+psw.push(y[8]);
+psw.push(y[9]);
+psw.push(z[lst-1]);
+psw.push(z[lst]);
+document.getElementById("rqs").innerHTML=psw.join("");
+psw=[];
+psw.push(y[3]);
+psw.push(y[4]);
+psw.push("@B");
+psw.push(y[8]);
+psw.push(y[9]);
+psw.push(z[lst-1]);
+psw.push(z[lst]);
+document.getElementById("rps").innerHTML=psw.join("");
+psw=[];
+psw.push(y[3]);
+psw.push(y[4]);
+psw.push(".B");
+psw.push(y[8]);
+psw.push(y[9]);
+psw.push(z[lst-1]);
+psw.push(z[lst]);
+document.getElementById("abc").innerHTML=psw.join("");
+}
+</script>
+</head>
+
+<body>
+
+<form name="frm">
+	Enter First name: <input type="text" id="name" value="">
+	Enter last name: <input type="text" id="lstnam" value="">
+<br>
+	Enter mobile number: <input type="text" id="num"value="">
+
+<br>
+Enter course:  
+CS <input type="radio" name="brh" value="cs"onclick="myfun(this.value)">
+BCA<input type="radio" name="brh" value="bca" onclick="myfun(this.value)">
+BBA<input type="radio" name="brh" value="bba" onclick="myfun(this.value)">
+EE <input type="radio" name="brh" value="ee" onclick="myfun(this.value)">
+
+
+</form>
+<br>
+
+
+</form>
+Username: <p id="res"> </p>
+Password(three cases): <p id="rqs"> </p>
+or 
+
+<p id="rps"> </p>
+or 
+<p id="abc"> </p>
+</body>
+
+</html>
